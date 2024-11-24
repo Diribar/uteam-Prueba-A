@@ -1,0 +1,23 @@
+{
+  "name": "prueba-a",
+  "version": "1.0.0",
+  "description": "git remote add origin https://github.com/Diribar/uteam-Prueba-A.git",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diribar/uteam-Prueba-A.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diribar/uteam-Prueba-A/issues"
+  },
+  "homepage": "https://github.com/Diribar/uteam-Prueba-A#readme",
+  "dependencies": {
+    "express": "^4.21.1"
+  }
+}

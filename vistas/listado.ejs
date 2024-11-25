@@ -25,22 +25,22 @@
 			<table>
 				<thead>
 					<tr>
-						<th class="eliminar">Eliminar</th>
+						<th class="editar">Editar</th>
 						<th class="titulo">Título</th>
 						<th class="creador">Creador</th>
 						<th class="paginas">Páginas</th>
-						<th class="editar">Editar</th>
+						<th class="eliminar">Eliminar</th>
 					</tr>
 				</thead>
 				<tbody>
-					<% for (let comic of comics) { %>
+					<% for (let comic of baseDatos) { %>
 					<tr>
-						<td id="marvel_id" class="ocultar input"><%= comic.id %></td>
-						<td class="eliminar"><i class="fa-solid fa-circle-xmark"></i></td>
-						<td id="titulo" class="titulo input"><%= comic.title %></td>
-						<td id="creador" class="creador input"><%= comic.creators.items.length ? comic.creators.items[0].name : 's/d' %></td>
-						<td id="paginas" class="paginas input"><%- comic.pageCount ? comic.pageCount : 's/d' %></td>
+						<td id="marvel_id" class="ocultar input"><%= comic.marvel_id %></td>
 						<td class="editar"><i class="fa-solid fa-pen"></i></td>
+						<td id="titulo" class="titulo input"><%= comic.titulo %></td>
+						<td id="creador" class="creador input"><%= comic.creador || 's/d' %></td>
+						<td id="paginas" class="paginas input"><%- comic.paginas || 's/d' %></td>
+						<td class="eliminar"><i class="fa-solid fa-circle-xmark"></i></td>
 					</tr>
 					<% } %>
 				</tbody>

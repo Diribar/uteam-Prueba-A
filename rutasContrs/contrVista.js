@@ -1,14 +1,19 @@
 "use strict";
 const publicKey = process.env.publicKey;
 const hash = process.env.hash;
-const fs = require("node:fs/promises");
+const fsSync = require("node:fs");
+const fsAsync = require("node:fs/promises");
 
 module.exports = {
 	inicio: (req, res) => res.redirect("/listado-de-comics"),
 
 	listadoComics: (req, res) => {
+		// Obtiene la base de datos
+		const rutaNombre = path.join(__dirname, "../auxiliar/comics.json");
+		let baseDatos = JSON.parse(fsSync.readFileSync(rutaNombre, {encoding: "utf8"}));
+
 		// Fin
-		return res.render("listado");
+		return res.render("listado", {baseDatos});
 	},
 
 	altaComics: async (req, res) => {
@@ -22,7 +27,7 @@ module.exports = {
 
 		// Obtiene la base de datos
 		const rutaNombre = path.join(__dirname, "../auxiliar/comics.json");
-		let baseDatos = fs.readFile(rutaNombre, {encoding: "utf8"}).then((n) => JSON.parse(n));
+		let baseDatos = fsAsync.readFile(rutaNombre, {encoding: "utf8"}).then((n) => JSON.parse(n));
 
 		// Espera hasta tener la info
 		[info, baseDatos] = await Promise.all([info, baseDatos]);

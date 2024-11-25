@@ -5,14 +5,10 @@ const router = express.Router();
 const contrVista = require("./contrVista.js");
 const contrAPI = require("./contrAPI.js");
 
-// Rutas - API - Listado de personas
-// router.get("/api/edita-persona", contrAPI.editaPersona);
-// router.get("/api/elimina-persona", contrAPI.eliminaPersona);
-// router.get("/api/agrega-persona", contrAPI.agregaPersona);
-// router.get("/api/buscador-personas", contrAPI.buscadorPersonas);
-
 // Rutas - API - CRUD
 router.get("/api/agregar", contrAPI.agregar);
+router.get("/api/editar", contrAPI.editar);
+router.get("/api/eliminar", contrAPI.eliminar);
 
 // Rutas - Vista
 router.get("/", contrVista.inicio);

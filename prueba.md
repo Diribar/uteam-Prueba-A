@@ -10,6 +10,5 @@ Se requiere:
 5.  Con la información desplegada desde el Api Rest, hacer un CRUD funcional
 		- Create
 		- Read
-
 		- Update
 		- Delete

@@ -14,10 +14,12 @@ module.exports = {
 	altaComics: async (req, res) => {
 		// Obtiene el listado de comics
 		const ruta = "https://gateway.marvel.com/v1/public/comics?ts=1&apikey=" + publicKey + "&hash=" + hash;
-		const listado = await fetch(ruta).then((n) => n.json());
+		const info = await fetch(ruta).then((n) => n.json());
 
+		// Obtiene los comics
+		const comics = info.data.results;
 		// Fin
-		return res.send(listado)
-		return res.render("altas");
+		// return res.send(comics);
+		return res.render("altas", {comics});
 	},
 };

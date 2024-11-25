@@ -1,34 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alta de Comics</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alta de Comics</title>
 
-    <!-- Font Awesome -->
-    <link
-      rel="stylesheet"
-      href="/publico/formatos/fontawesome/css/fontawesome.css"
-    />
-    <link rel="stylesheet" href="/publico/formatos/fontawesome/css/solid.css" />
-    <link
-      rel="stylesheet"
-      href="/publico/formatos/fontawesome/css/regular.css"
-    />
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="/publico/formatos/fontawesome/css/fontawesome.css" />
+		<link rel="stylesheet" href="/publico/formatos/fontawesome/css/solid.css" />
+		<link rel="stylesheet" href="/publico/formatos/fontawesome/css/regular.css" />
 
-    <!-- Formato -->
-    <link rel="stylesheet" href="/publico/formatos/general.css" />
-    <link rel="stylesheet" href="/publico/formatos/altaComics.css" />
-  </head>
-  <body>
-    <header class="flexColAlign">
-      <h1>Alta de Comics</h1>
-      <a href="/listado-de-comics">
-        <i class="fa-solid fa-list-ol" title="Ir a listado de comics"></i>
-      </a>
-    </header>
-    <main class="flexColAlign">
-
-    </main>
-  </body>
+		<!-- Formato -->
+		<link rel="stylesheet" href="/publico/formatos/general.css" />
+		<link rel="stylesheet" href="/publico/formatos/altaComics.css" />
+	</head>
+	<body>
+		<header class="flexColAlign">
+			<h1>Alta de Comics</h1>
+			<a href="/listado-de-comics">
+				<i class="fa-solid fa-list-ol" title="Ir a listado de comics"></i>
+			</a>
+		</header>
+		<main class="flexColAlign">
+			<table>
+				<thead>
+					<tr>
+						<th class="titulo">Título</th>
+						<th class="creador">Creador</th>
+						<th class="paginas">Páginas</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for (let comic of comics) { %>
+					<tr>
+						<td class="ocultar"><%= comic.id %></td>
+						<td class="titulo"><%= comic.title %></td>
+						<td class="creador"><%= comic.creators.items.length ? comic.creators.items[0].name : 's/d' %></td>
+						<td class="paginas"><%- comic.pageCount ? comic.pageCount : 's/d' %></td>
+					</tr>
+					<% } %>
+				</tbody>
+			</table>
+		</main>
+	</body>
 </html>

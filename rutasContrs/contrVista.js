@@ -26,7 +26,6 @@ module.exports = {
 
 		// Espera hasta tener la info
 		[info, baseDatos] = await Promise.all([info, baseDatos]);
-		console.log(29, baseDatos);
 
 		// Obtiene info de detalle
 		const comics = info.data.results;

@@ -9,10 +9,8 @@ app.listen(80, () => console.log("Servidor funcionando..."));
 global.path = require("path");
 
 // Carpeta de formatos
-const carpetaFormatos = path.join(__dirname, "publico/formatos");
-app.use("/formatos", express.static(carpetaFormatos));
-const carpetaJS = path.join(__dirname, "publico/javascript");
-app.use("/javascript", express.static(carpetaJS));
+const carpeta = path.join(__dirname, "publico");
+app.use("/publico", express.static(carpeta));
 
 // Vistas
 app.set("view engine", "ejs"); // Terminación de los archivos de vista

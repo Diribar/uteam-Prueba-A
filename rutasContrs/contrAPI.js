@@ -1,5 +1,6 @@
 "use strict";
 const fs = require("node:fs");
+const rutaNombre = path.join(__dirname, "../auxiliar/comics.json");
 
 module.exports = {
 	agregar: (req, res) => {
@@ -30,6 +31,7 @@ module.exports = {
 	editar: (req, res) => {
 		// Variables
 		console.log(32, req.query);
+		return
 
 		const datos = req.query;
 		let info = obtieneComicsDeBd();
@@ -47,7 +49,6 @@ module.exports = {
 
 const obtieneComicsDeBd = () => {
 	// Obtiene la BD
-	const rutaNombre = path.join(__dirname, "../auxiliar/comics.json");
 	const BD = fs.readFileSync(rutaNombre, "utf8");
 	let info = JSON.parse(BD);
 

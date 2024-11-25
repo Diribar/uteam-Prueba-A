@@ -3,7 +3,7 @@ window.addEventListener("load", () => {
 	// DOM
 	const DOM = {
 		trs: document.querySelectorAll("tbody tr"),
-		editars: document.querySelectorAll("tbody .editar"),
+		editars: document.querySelectorAll("tbody .editar i"),
 		marvel_ids: document.querySelectorAll("tbody .marvel_id"),
 		inputs: document.querySelectorAll("tbody input"),
 		eliminars: document.querySelectorAll("tbody .eliminar i"),
@@ -39,26 +39,41 @@ window.addEventListener("load", () => {
 				return;
 			}
 
-			// Si el ícono figura como confirmar, lo reemplaza por edición
+			// De lo contrario, reemplaza el ícono confirmar por edición
 			editar.classList.replace("fa-circle-check", "fa-pen");
 
 			// Obtiene los datos
 			let datos = "";
 			for (let i = 0; i < 3; i++) {
-				// Consigue los datos
+				// Le asigna el 'disabled' de los inputs
 				const input = DOM.inputs[i + fila * 3];
-				if (!datos) datos += "?";
+				input.disabled = true;
+
+				// Consigue los datos
+				if (!datos) datos += "/?marvel_id=" + DOM.marvel_ids.innerHTML;
 				else if (input.value == "s/d") continue;
 				else datos += "&";
-				datos += input.name + "=" + input.value;
-
-				// Le asigna el 'disabled' de los inputs
-				input.classList.disabled = true;
+				datos += input.name + "=" + encodeURIComponent(input.value);
 
 				// Envía los datos
 				fetch("/api/editar" + datos);
 			}
 		});
 	});
-	DOM.inputs.forEach(input);
+	DOM.inputs.forEach((input, i) => {
+		input.addEventListener("input", () => {
+			// Averigua la fila
+			const fila = Math.floor(i / 3);
+
+			// Si algún campo no tiene valor, inactiva el ícono confirmar
+			DOM.confirmar[fila].classList.remove("inactivo") // activo
+			for (let campo = 0; campo < 3; campo++) {
+				const dato = DOM.inputs[fila * 3 + campo];
+				if (!dato.value) DOM.confirmar[fila].classList.add("inactivo"); // inactivo
+			}
+
+			// Largo máximo de los inputs
+			input.value = input.value.slice(0, 20);
+		});
+	});
 });

@@ -71,9 +71,6 @@ window.addEventListener("load", () => {
 				const dato = DOM.inputs[fila * 3 + campo];
 				if (!dato.value) DOM.confirmar[fila].classList.add("inactivo"); // inactivo
 			}
-
-			// Largo máximo de los inputs
-			input.value = input.value.slice(0, 20);
 		});
 	});
 });

@@ -64,11 +64,11 @@ window.addEventListener("load", () => {
 			// Averigua la fila
 			const fila = Math.floor(i / 3);
 
-			// Si algún campo no tiene valor, inactiva el ícono confirmar
-			DOM.confirmar[fila].classList.remove("inactivo"); // activo
+			// Si algún campo no tiene valor, inactiva el ícono editars
+			DOM.editars[fila].classList.remove("inactivo"); // activo
 			for (let campo = 0; campo < 3; campo++) {
 				const dato = DOM.inputs[fila * 3 + campo];
-				if (!dato.value) DOM.confirmar[fila].classList.add("inactivo"); // inactivo
+				if (!dato.value) DOM.editars[fila].classList.add("inactivo"); // inactivo
 			}
 		});
 	});

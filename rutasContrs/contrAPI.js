@@ -30,14 +30,11 @@ module.exports = {
 	},
 	editar: (req, res) => {
 		// Variables
-		console.log(32, req.query);
-		return
-
 		const datos = req.query;
 		let info = obtieneComicsDeBd();
 
 		// Actualiza el registro y lo guarda
-		info = info.filter((n) => n.marvel_id != marvel_id);
+		info = info.filter((n) => n.marvel_id != datos.marvel_id);
 		info.push(datos);
 		info.sort((a, b) => (a.titulo < b.titulo ? -1 : 1)); // los ordena por id
 		fs.writeFileSync(rutaNombre, JSON.stringify(info));

@@ -29,7 +29,7 @@ module.exports = {
 		let info = JSON.parse(BD);
 
 		// Elimina el registro y lo guarda
-		info.filter((n) => n.marvel_id != marvel_id);
+		info = info.filter((n) => n.marvel_id != "428");
 		fs.writeFileSync(rutaNombre, JSON.stringify(info));
 
 		// Fin
@@ -40,6 +40,6 @@ module.exports = {
 		const datos = req.query;
 
 		// Fin
-		return res.json()
+		return res.json();
 	},
 };

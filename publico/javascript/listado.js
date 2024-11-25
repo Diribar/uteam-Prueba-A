@@ -5,30 +5,20 @@ window.addEventListener("load", () => {
 		eliminars: document.querySelectorAll("tbody .eliminar i"),
 		marvel_ids: document.querySelectorAll("tbody .marvel_id"),
 		inputs: document.querySelectorAll("tbody .input"),
+		trs: document.querySelectorAll("tbody tr"),
 	};
 
-	// Eventos
-	DOM.agregars.forEach((agregar, fila) => {
-		agregar.addEventListener("click", () => {
-			// Oculta el ícono agregar
-			agregar.classList.add("ocultar");
 
-			// Obtiene los datos
-			let indiceInicial = fila * 4;
-			let datos = "";
-			for (let indice = 0; indice < 4; indice++) {
-				// Averiguaciones particulares
-				const input = DOM.inputs[indiceInicial + indice];
-				if (!indice) datos += "/?";
-				else if (input.innerHTML != "s/d") datos += "&";
-				else continue;
-
-				// Agrega un valor
-				datos += input.id + "=" + input.innerHTML;
-			}
+	// Eventos - eliminar
+	DOM.eliminars.forEach((eliminar, fila) => {
+		eliminar.addEventListener("click", () => {
+			// Oculta la fila del ícono eliminar
+			DOM.trs[fila].classList.add("ocultar");
 
 			// Envía los datos
-			fetch("/api/agregar" + datos);
+			let datos = "/?marvel_id=" + DOM.marvel_ids[fila].innerHTML;
+
+			fetch("/api/eliminar" + datos);
 		});
 	});
 });

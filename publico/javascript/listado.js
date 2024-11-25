@@ -43,21 +43,20 @@ window.addEventListener("load", () => {
 			editar.classList.replace("fa-circle-check", "fa-pen");
 
 			// Obtiene los datos
-			let datos = "";
+			let datos = "/?marvel_id=" + DOM.marvel_ids[fila].innerHTML;
 			for (let i = 0; i < 3; i++) {
-				// Le asigna el 'disabled' de los inputs
+				// Le asigna el 'disabled' a los inputs
 				const input = DOM.inputs[i + fila * 3];
 				input.disabled = true;
 
 				// Consigue los datos
-				if (!datos) datos += "/?marvel_id=" + DOM.marvel_ids.innerHTML;
-				else if (input.value == "s/d") continue;
+				if (input.value == "s/d") continue;
 				else datos += "&";
 				datos += input.name + "=" + encodeURIComponent(input.value);
-
-				// Envía los datos
-				fetch("/api/editar" + datos);
 			}
+
+			// Envía los datos
+			fetch("/api/editar" + datos);
 		});
 	});
 	DOM.inputs.forEach((input, i) => {
@@ -66,7 +65,7 @@ window.addEventListener("load", () => {
 			const fila = Math.floor(i / 3);
 
 			// Si algún campo no tiene valor, inactiva el ícono confirmar
-			DOM.confirmar[fila].classList.remove("inactivo") // activo
+			DOM.confirmar[fila].classList.remove("inactivo"); // activo
 			for (let campo = 0; campo < 3; campo++) {
 				const dato = DOM.inputs[fila * 3 + campo];
 				if (!dato.value) DOM.confirmar[fila].classList.add("inactivo"); // inactivo

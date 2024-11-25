@@ -1,0 +1,43 @@
+/* General */
+html {
+	font-size: 16px; /* debe estar en 'html', porque es de donde donde toma referencia el 'rem' */
+	line-height: 1;
+}
+body {background-color: lightgoldenrodyellow; padding-block: 30px ;}
+body * {font-family: 'Calibri', 'Trebuchet MS', 'sans-serif'; background-color: transparent; color: inherit;}
+h1 {font-size: 1.5rem; color: darkblue;}
+h2 {font-size: 1.3rem; color: brown;}
+
+/* Clases - flexbox */
+.flexCol {display: flex; flex-direction: column;}
+.flexRow {display: flex; flex-direction: row;}
+.flexRowAlign {display: flex; flex-direction: row; align-items: center;}
+.flexColAlign {display: flex; flex-direction: column; align-items: center;}
+
+/* Clases - otros */
+.fa-solid:not(.inactivo) {cursor: pointer;}
+.inactivo {opacity: .5; cursor: not-allowed;}
+.ocultar {display: none;}
+
+body {
+	header {text-align: center;}
+	main {
+		table {
+			border-spacing: 20px 5px; background-color: beige; border-radius: 15px;
+			.agregar {text-align: right;}
+			#titulo, #creador {text-align: left;}
+			#paginas {text-align: center;}
+			td {color: rgb(102, 60, 7);}
+		}
+		#sectorIconos {
+			margin-top: 40px;
+			.iconos {
+				&.irOtrosLotes {
+					margin-right: 40px;
+					.margenDer {margin-right: 20px;}
+				}
+				i {font-size: 1.5rem;}
+			}
+		}
+	}
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Alta de Comics</title>
+
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="/publico/formatos/fontawesome/css/fontawesome.css" />
+		<link rel="stylesheet" href="/publico/formatos/fontawesome/css/solid.css" />
+		<link rel="stylesheet" href="/publico/formatos/fontawesome/css/regular.css" />
+
+		<!-- Formato -->
+		<link rel="stylesheet" href="/publico/formatos/general.css" />
+		<link rel="stylesheet" href="/publico/formatos/altaComics.css" />
+
+		<!-- Scripts -->
+		<script src="/publico/javascript/altaComics.js"></script>
+	</head>
+	<body>
+		<header>
+			<h1>Alta de Comics (lotes <%= lote %> al <%- lote + comics.length + (comics.length ? - 1 : 0) %>)</h1>
+		</header>
+		<main class="flexColAlign">
+			<table>
+				<thead>
+					<tr>
+						<th class="agregar">Agregar</th>
+						<th class="titulo">Título</th>
+						<th class="creador">Creador</th>
+						<th class="paginas">Páginas</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for (let comic of comics) { %>
+					<tr>
+						<td id="marvel_id" class="ocultar input"><%= comic.id %></td>
+						<% const mostrar = !marvelIds.includes(comic.id) %>
+						<td class="agregar"><i class="fa-solid <% if (mostrar) { %>fa-circle-plus<% } %>"></i></td>
+						<td id="titulo" class="titulo input"><%= comic.title %></td>
+						<td id="creador" class="creador input"><%= comic.creators.items.length ? comic.creators.items[0].name : 's/d' %></td>
+						<td id="paginas" class="paginas input"><%- comic.pageCount ? comic.pageCount : 's/d' %></td>
+					</tr>
+					<% } %>
+				</tbody>
+			</table>
+			<section id="sectorIconos" class="flexRow">
+				<div class="iconos flexRow irOtrosLotes">
+					<a href="<%= url + lotes.anterior %>" class="<% if (!lote) { %>ocultar<% } %>">
+						<i class="fa-solid fa-circle-left margenDer" title="Ir al lote anterior"></i>
+					</a>
+					<a href="<%= url + lotes.posterior %>">
+						<i class="fa-solid fa-circle-right" title="Ir al lote posterior"></i>
+					</a>
+				</div>
+				<div class="iconos flexRow">
+					<a href="/listado-de-comics">
+						<i class="fa-solid fa-list-ol" title="Ir al listado propio de comics"></i>
+					</a>
+				</div>
+			</section>
+		</main>
+	</body>
+</html>

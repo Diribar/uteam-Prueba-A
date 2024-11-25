@@ -3,7 +3,7 @@
 // Variables
 const router = express.Router();
 const contrVista = require("./contrVista.js");
-// const contrAPI = require("./contrAPI.js");
+const contrAPI = require("./contrAPI.js");
 
 // Rutas - API - Listado de personas
 // router.get("/api/edita-persona", contrAPI.editaPersona);
@@ -11,9 +11,8 @@ const contrVista = require("./contrVista.js");
 // router.get("/api/agrega-persona", contrAPI.agregaPersona);
 // router.get("/api/buscador-personas", contrAPI.buscadorPersonas);
 
-// Rutas - API - Películas por persona
-// router.get("/api/elimina-relacion-persona-pelicula", contrAPI.eliminaPersPeli);
-// router.get("/api/agrega-relacion-persona-pelicula", contrAPI.agregaPersPeli);
+// Rutas - API - CRUD
+router.get("/api/agregar", contrAPI.agregar);
 
 // Rutas - Vista
 router.get("/", contrVista.inicio);

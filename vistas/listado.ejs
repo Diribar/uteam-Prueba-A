@@ -36,10 +36,10 @@
 					<% for (let comic of baseDatos) { %>
 					<tr>
 						<td class="editar"><i class="fa-solid fa-pen"></i></td>
-						<td class="marvel_id input ocultar"><%= comic.marvel_id %></td>
-						<td class="titulo input"><%= comic.titulo %></td>
-						<td class="creador input"><%= comic.creador || 's/d' %></td>
-						<td class="paginas input"><%- comic.paginas || 's/d' %></td>
+						<td class="marvel_id ocultar"><%= comic.marvel_id %></td>
+						<td class="titulo input"><input name="titulo" type="text" value="<%= comic.titulo %>"></td>
+						<td class="creador input"><input name="creador" type="text" value="<%= comic.creador || 's/d' %>"></td>
+						<td class="paginas input"><input name="paginas" type="text" value="<%- comic.paginas || 's/d' %>"></td>
 						<td class="eliminar"><i class="fa-solid fa-circle-xmark"></i></td>
 					</tr>
 					<% } %>

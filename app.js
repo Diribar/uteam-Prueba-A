@@ -19,4 +19,4 @@ app.set("view engine", "ejs"); // Terminación de los archivos de vista
 app.set("views", ["./vistas"]);
 
 // Ruteador
-// app.use("/", require("./rutasContrs/ruta"));
+app.use("/", require("./rutasContrs/ruta"));

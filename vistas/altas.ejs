@@ -22,6 +22,7 @@
 			<table>
 				<thead>
 					<tr>
+						<th class="agregar">Agregar</th>
 						<th class="titulo">Título</th>
 						<th class="creador">Creador</th>
 						<th class="paginas">Páginas</th>
@@ -31,6 +32,8 @@
 					<% for (let comic of comics) { %>
 					<tr>
 						<td class="ocultar"><%= comic.id %></td>
+						<% const mostrar = !marvelIds.includes(comic.id) %>
+						<td class="agregar"><i class="fa-solid <% if (mostrar) { %>fa-circle-plus<% } %>"></i></td>
 						<td class="titulo"><%= comic.title %></td>
 						<td class="creador"><%= comic.creators.items.length ? comic.creators.items[0].name : 's/d' %></td>
 						<td class="paginas"><%- comic.pageCount ? comic.pageCount : 's/d' %></td>

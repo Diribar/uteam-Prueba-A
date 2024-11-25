@@ -25,9 +25,6 @@ body {
 		table {
 			border-spacing: 20px 5px; background-color: beige; border-radius: 15px;
 			td {color: rgb(102, 60, 7);}
-			.agregar, .editar {text-align: right;}
-			.titulo, .creador {text-align: left;}
-			.paginas, .eliminar {text-align: center;}
 		}
 		#sectorIconos {
 			margin-top: 40px;

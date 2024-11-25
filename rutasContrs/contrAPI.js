@@ -5,7 +5,7 @@ module.exports = {
 	agregar: (req, res) => {
 		// Variables
 		const datos = req.query;
-		let info = obtieneComicsDeBd()
+		let info = obtieneComicsDeBd();
 
 		// Agrega el nuevo registro y lo guarda
 		info.push(datos);
@@ -18,7 +18,7 @@ module.exports = {
 	eliminar: (req, res) => {
 		// Variables
 		const {marvel_id} = req.query;
-		let info = obtieneComicsDeBd()
+		let info = obtieneComicsDeBd();
 
 		// Elimina el registro y lo guarda
 		info = info.filter((n) => n.marvel_id != marvel_id);
@@ -29,8 +29,10 @@ module.exports = {
 	},
 	editar: (req, res) => {
 		// Variables
+		console.log(32, req.query);
+
 		const datos = req.query;
-		let info = obtieneComicsDeBd()
+		let info = obtieneComicsDeBd();
 
 		// Actualiza el registro y lo guarda
 		info = info.filter((n) => n.marvel_id != marvel_id);
@@ -43,12 +45,12 @@ module.exports = {
 	},
 };
 
-const obtieneComicsDeBd=()=>{
+const obtieneComicsDeBd = () => {
 	// Obtiene la BD
 	const rutaNombre = path.join(__dirname, "../auxiliar/comics.json");
 	const BD = fs.readFileSync(rutaNombre, "utf8");
 	let info = JSON.parse(BD);
 
 	// Fin
-	return info
-}
+	return info;
+};

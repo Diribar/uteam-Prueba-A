@@ -21,11 +21,25 @@ window.addEventListener("load", () => {
 			fetch("/api/eliminar" + datos);
 		});
 	});
-	// Eventos - editar
+	// Eventos - confirmar
 	DOM.editars.forEach((editar, fila) => {
 		editar.addEventListener("click", () => {
 			// Si el ícono está inactivo interrumpe la función
 			if (editar.className.includes("inactivo")) return;
+
+			// Acciones si el ícono figura como edición
+			if (editar.className.includes("fa-pen")) {
+				// Quita el 'disabled' de los inputs
+				for (let i = 0; i < 3; i++) DOM.inputs[i + fila * 3].disabled = false;
+
+				// Reemplaza el ícono por confirmar
+				editar.classList.replace("fa-pen", "fa-circle-check");
+
+				// Fin
+				return;
+			}
+
+			// Si el ícono figura como confirmar, lo reemplaza por edición
 			editar.classList.replace("fa-circle-check", "fa-pen");
 
 			// Obtiene los datos
@@ -38,9 +52,13 @@ window.addEventListener("load", () => {
 				else datos += "&";
 				datos += input.name + "=" + input.value;
 
+				// Le asigna el 'disabled' de los inputs
+				input.classList.disabled = true;
+
 				// Envía los datos
 				fetch("/api/editar" + datos);
 			}
 		});
 	});
+	DOM.inputs.forEach(input);
 });

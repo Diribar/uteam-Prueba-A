@@ -1,6 +1,4 @@
 table {
-	border-spacing: 20px 5px; background-color: beige; border-radius: 15px;
-	td {color: rgb(102, 60, 7);}
 	.editar {text-align: right;}
 	:is(.titulo, .creador) input {text-align: left;}
 	.paginas input, .eliminar {text-align: center;}

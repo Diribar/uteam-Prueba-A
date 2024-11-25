@@ -37,9 +37,9 @@
 						<td id="marvel_id" class="ocultar input"><%= comic.id %></td>
 						<% const mostrar = !marvelIds.includes(comic.id) %>
 						<td class="agregar"><i class="fa-solid <% if (mostrar) { %>fa-circle-plus<% } %>"></i></td>
-						<td class="titulo input"><%= comic.title %></td>
-						<td class="creador input"><%= comic.creators.items.length ? comic.creators.items[0].name : 's/d' %></td>
-						<td class="paginas input"><%- comic.pageCount ? comic.pageCount : 's/d' %></td>
+						<td id="titulo" class="titulo input"><%= comic.title %></td>
+						<td id="creador" class="creador input"><%= comic.creators.items.length ? comic.creators.items[0].name : 's/d' %></td>
+						<td id="paginas" class="paginas input"><%- comic.pageCount ? comic.pageCount : 's/d' %></td>
 					</tr>
 					<% } %>
 				</tbody>

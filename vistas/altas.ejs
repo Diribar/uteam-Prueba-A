@@ -37,9 +37,9 @@
 						<td id="marvel_id" class="ocultar input"><%= comic.id %></td>
 						<% const mostrar = !marvelIds.includes(comic.id) %>
 						<td class="agregar"><i class="fa-solid <% if (mostrar) { %>fa-circle-plus<% } %>"></i></td>
-						<td id="titulo" class="titulo input"><%= comic.title %></td>
-						<td id="creador" class="creador input"><%= comic.creators.items.length ? comic.creators.items[0].name : 's/d' %></td>
-						<td id="paginas" class="paginas input"><%- comic.pageCount ? comic.pageCount : 's/d' %></td>
+						<td class="titulo input"><%= comic.title %></td>
+						<td class="creador input"><%= comic.creators.items.length ? comic.creators.items[0].name : 's/d' %></td>
+						<td class="paginas input"><%- comic.pageCount ? comic.pageCount : 's/d' %></td>
 					</tr>
 					<% } %>
 				</tbody>
@@ -53,11 +53,9 @@
 						<i class="fa-solid fa-circle-right" title="Ir al lote posterior"></i>
 					</a>
 				</div>
-				<div class="iconos flexRow">
-					<a href="/listado-de-comics">
-						<i class="fa-solid fa-list-ol" title="Ir al listado propio de comics"></i>
-					</a>
-				</div>
+				<a href="/listado-de-comics" class="iconos">
+					<i class="fa-solid fa-list-ol" title="Ir al listado propio de comics"></i>
+				</a>
 			</section>
 		</main>
 	</body>

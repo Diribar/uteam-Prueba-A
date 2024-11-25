@@ -13,8 +13,7 @@ module.exports = {
 
 		// Agrega el nuevo registro y lo guarda
 		info.push(datos);
-		info
-			.sort((a, b) => (a.titulo < b.titulo ? -1 : 1)); // los ordena por id
+		info.sort((a, b) => (a.titulo < b.titulo ? -1 : 1)); // los ordena por id
 		fs.writeFileSync(rutaNombre, JSON.stringify(info));
 
 		// Fin

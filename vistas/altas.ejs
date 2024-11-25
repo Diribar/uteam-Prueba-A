@@ -16,7 +16,7 @@
 	</head>
 	<body>
 		<header>
-			<h1>Alta de Comics</h1>
+			<h1>Alta de Comics (lotes <%= lote %> al <%- lote + comics.length + (comics.length ? - 1 : 0) %>)</h1>
 		</header>
 		<main class="flexColAlign">
 			<table>
@@ -39,13 +39,17 @@
 				</tbody>
 			</table>
 			<section id="sectorIconos" class="flexRow">
-				<div class="iconos flexRow">
-					<i class="fa-solid fa-list-ol" title="Ir a listado de comics"></i>
-					<i class="fa-solid fa-list-ol" title="Ir a listado de comics"></i>
+				<div class="iconos flexRow irOtrosLotes">
+					<a href="<%= url + lotes.anterior %>" class="<% if (!lote) { %>ocultar<% } %>">
+						<i class="fa-solid fa-circle-left margenDer" title="Ir al lote anterior"></i>
+					</a>
+					<a href="<%= url + lotes.posterior %>">
+						<i class="fa-solid fa-circle-right" title="Ir al lote posterior"></i>
+					</a>
 				</div>
 				<div class="iconos flexRow">
 					<a href="/listado-de-comics">
-						<i class="fa-solid fa-list-ol" title="Ir a listado de comics"></i>
+						<i class="fa-solid fa-list-ol" title="Ir al listado propio de comics"></i>
 					</a>
 				</div>
 			</section>

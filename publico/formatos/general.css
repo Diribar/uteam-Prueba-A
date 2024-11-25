@@ -23,15 +23,21 @@ body {
 	header {text-align: center;}
 	main {
 		table {
-			border-spacing: 20px 5px;
+			border-spacing: 20px 5px; background-color: beige; border-radius: 15px;
 			.titulo, .creador {text-align: left;}
 			.paginas {text-align: center;}
 			td:has(i) {text-align: center;}
 			td {color: rgb(102, 60, 7);}
 		}
 		#sectorIconos {
-			margin-top: 20px;
-			.iconos i {font-size: 1.5rem;}
+			margin-top: 40px;
+			.iconos {
+				&.irOtrosLotes {
+					margin-right: 40px;
+					.margenDer {margin-right: 20px;}
+				}
+				i {font-size: 1.5rem;}
+			}
 		}
 	}
 }

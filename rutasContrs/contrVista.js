@@ -13,7 +13,8 @@ module.exports = {
 
 	altaComics: async (req, res) => {
 		// Variables
-		const lote = req.query.lote || 0;
+		const lote = Number(req.query.lote) || 0;
+		const url = req.originalUrl.split("?")[0] + "?lote=";
 
 		// Obtiene el listado de comics
 		const ruta = "https://gateway.marvel.com/v1/public/comics?ts=1&apikey=" + publicKey + "&hash=" + hash + "&offset=" + lote;
@@ -21,9 +22,16 @@ module.exports = {
 
 		// Obtiene los comics
 		const comics = info.data.results;
+		const registros = comics.length;
+
+		// Obtiene los lotes vecinos
+		const lotes = {
+			anterior: lote - 20 >= 0 ? lote - 20 : 0,
+			posterior: lote + 20,
+		};
 
 		// Fin
-		return res.send(comics);
-		return res.render("altas", {comics});
+		// return res.send(comics);
+		return res.render("altas", {comics, url, lotes, lote});
 	},
 };

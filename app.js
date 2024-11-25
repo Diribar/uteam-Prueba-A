@@ -7,6 +7,8 @@ app.listen(80, () => console.log("Servidor funcionando..."));
 
 // Requires
 global.path = require("path");
+global.fetch = require("node-fetch");
+require("dotenv").config();
 
 // Carpeta de formatos
 const carpeta = path.join(__dirname, "publico");

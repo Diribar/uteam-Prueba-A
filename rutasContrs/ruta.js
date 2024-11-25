@@ -16,7 +16,7 @@ const contrVista = require("./contrVista.js");
 // router.get("/api/agrega-relacion-persona-pelicula", contrAPI.agregaPersPeli);
 
 // Rutas - Vista
-// router.get("/", contrVista.inicio);
+router.get("/", contrVista.inicio);
 router.get("/listado-de-comics", contrVista.listadoComics);
 router.get("/alta-de-comics", contrVista.altaComics);
 

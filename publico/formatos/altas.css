@@ -1,0 +1,5 @@
+table {
+	.agregar {text-align: right;}
+	.titulo, .creador {text-align: left;}
+	.paginas {text-align: center;}
+}

@@ -12,7 +12,7 @@
 
 		<!-- Formato -->
 		<link rel="stylesheet" href="/publico/formatos/general.css" />
-		<!-- <link rel="stylesheet" href="/publico/formatos/listadoComics.css" /> -->
+		<link rel="stylesheet" href="/publico/formatos/listado.css" />
 
 		<!-- Scripts -->
 		<script src="/publico/javascript/listado.js"></script>
@@ -37,9 +37,9 @@
 					<tr>
 						<td class="editar"><i class="fa-solid fa-pen"></i></td>
 						<td class="marvel_id ocultar"><%= comic.marvel_id %></td>
-						<td class="titulo input"><input name="titulo" type="text" value="<%= comic.titulo %>"></td>
-						<td class="creador input"><input name="creador" type="text" value="<%= comic.creador || 's/d' %>"></td>
-						<td class="paginas input"><input name="paginas" type="text" value="<%- comic.paginas || 's/d' %>"></td>
+						<td class="titulo"><input name="titulo" type="text" value="<%= comic.titulo %>" disabled></td>
+						<td class="creador"><input name="creador" type="text" value="<%= comic.creador || 's/d' %>" disabled></td>
+						<td class="paginas"><input name="paginas" type="text" value="<%- comic.paginas || 's/d' %>" disabled></td>
 						<td class="eliminar"><i class="fa-solid fa-circle-xmark"></i></td>
 					</tr>
 					<% } %>

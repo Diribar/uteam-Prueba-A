@@ -38,7 +38,7 @@ module.exports = {
 
 		// Obtiene los lotes vecinos
 		const lotes = {
-			anterior: lote - 20 >= 0 ? lote - 20 : 0,
+			anterior: Math.max(lote - 20, 0),
 			posterior: lote + 20,
 		};
 

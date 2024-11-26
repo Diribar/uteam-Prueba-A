@@ -11,7 +11,13 @@ PROYECTO A
 	- En el navegador web, usar el siguiente url: localhost. La aplicación redirige a la vista de Comics Propios
 
 3. La aplicación consta de dos vistas:
-	- /alta-de-comics, donde se pueden agregar comics del proveedor 'Marvel' al catálogo propio
+	- /alta-de-comics, donde se pueden agregar comics del proveedor 'Marvel' al catálogo propio.
+		- El ícono de agregar desaparece cuando se agrega, para evitar duplicar el alta
+		- La vista tarda en aparecer, porque el proveedor de las APIs (Marvel), demora en brindar la información.
+		- Cada vista es por un máximo de 20 registros. Se puede pasar al lote siguiente o anterior con los íconos de flecha, que hay al final del listado. El lote figura en el url.
 	- /comics-propios, donde se pueden eliminar o editar registros del catálogo propio; están ordenados por su título
 
-4. Se pasa de una vista a la otra con los íconos que hay luego de los listados
+4. Se pasa de una vista a la otra con los íconos que hay abajo de los listados
+
+5. Particularidades:
+	- Sólo se guardan datos relevantes en el archivo json. Los campos en los que las API no tienen un valor, no se guardan y la vista los asume como 's/d' (sin datos).

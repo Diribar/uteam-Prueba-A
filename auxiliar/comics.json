@@ -3,6 +3,11 @@
 	{"marvel_id": "82965", "titulo": "Marvel Previews (2017)", "paginas": "152"},
 	{"marvel_id": "82970", "titulo": "Marvel Previews (2017)", "creador": "Jim Nausedas", "paginas": "112"},
 	{
+		"marvel_id": "1689",
+		"titulo": "Official Handbook of the Marvel Universe (2004) #10 (MARVEL KNIGHTS)",
+		"creador": "Ronald Byrd"
+	},
+	{
 		"marvel_id": "1749",
 		"titulo": "Official Handbook of the Marvel Universe (2004) #11 (X-MEN - AGE OF APOCALYPSE)",
 		"creador": "Mark Brooks"

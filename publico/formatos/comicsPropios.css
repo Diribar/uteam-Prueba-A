@@ -3,4 +3,5 @@ table {
 	.titulo, .creador {text-align: left;}
 	.paginas input, .eliminar {text-align: center;}
 	input:disabled {border-color: transparent;}
+	.titulo input {min-width: 300px;}
 }

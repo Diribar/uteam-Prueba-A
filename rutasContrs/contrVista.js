@@ -13,7 +13,7 @@ module.exports = {
 		let baseDatos = JSON.parse(fsSync.readFileSync(rutaNombre, {encoding: "utf8"}));
 
 		// Fin
-		return res.render("listado", {baseDatos});
+		return res.render("comicsPropios", {baseDatos});
 	},
 
 	altaComics: async (req, res) => {
@@ -44,6 +44,6 @@ module.exports = {
 
 		// Fin
 		// return res.send(comics);
-		return res.render("altas", {comics, url, lotes, lote, marvelIds});
+		return res.render("altaComics", {comics, url, lotes, lote, marvelIds});
 	},
 };

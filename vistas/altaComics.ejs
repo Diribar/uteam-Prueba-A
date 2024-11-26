@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Comics a dar de Alta</title>
+		<title>Prueba A | Comics a dar de Alta</title>
 
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="/publico/formatos/fontawesome/css/fontawesome.css" />
@@ -26,6 +26,7 @@
 				<thead>
 					<tr>
 						<th class="agregar">Agregar</th>
+						<th>ID</th>
 						<th class="titulo">Título</th>
 						<th class="creador">Creador</th>
 						<th class="paginas">Páginas</th>
@@ -34,9 +35,9 @@
 				<tbody>
 					<% for (let comic of comics) { %>
 					<tr>
-						<td id="marvel_id" class="ocultar input"><%= comic.id %></td>
-						<% const mostrar = !marvelIds.includes(comic.id) %>
-						<td class="agregar"><i class="fa-solid <% if (mostrar) { %>fa-circle-plus<% } %>"></i></td>
+						<% const mostrar = !marvelIds.includes(String(comic.id)) %>
+						<td class="agregar"><i class="fa-solid <%- mostrar ? 'fa-circle-plus' : 'ocultar' %>"></i></td>
+						<td id="marvel_id" class="input"><%= comic.id %></td>
 						<td id="titulo" class="titulo input"><%= comic.title %></td>
 						<td id="creador" class="creador input"><%= comic.creators.items.length ? comic.creators.items[0].name : 's/d' %></td>
 						<td id="paginas" class="paginas input"><%- comic.pageCount ? comic.pageCount : 's/d' %></td>

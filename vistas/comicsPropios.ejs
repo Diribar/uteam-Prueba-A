@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Listado de Comics Propios</title>
+		<title>Prueba A | Listado de Comics Propios</title>
 
 		<!-- Font Awesome -->
 		<link rel="stylesheet" href="/publico/formatos/fontawesome/css/fontawesome.css" />
@@ -25,23 +25,23 @@
 			<table>
 				<thead>
 					<tr>
-						<th class="editar">Editar</th>
-						<th class="marvel_id ocultar">ID</th>
+						<th class="eliminar">Eliminar</th>
+						<th class="marvel_id">ID</th>
 						<th class="titulo">Título</th>
 						<th class="creador">Creador</th>
 						<th class="paginas">Páginas</th>
-						<th class="eliminar">Eliminar</th>
+						<th class="editar">Editar</th>
 					</tr>
 				</thead>
 				<tbody>
 					<% for (let comic of baseDatos) { %>
 					<tr>
-						<td class="editar"><i class="fa-solid fa-pen"></i></td>
-						<td class="marvel_id ocultar"><%= comic.marvel_id %></td>
+						<td class="eliminar"><i class="fa-solid fa-circle-xmark"></i></td>
+						<td class="marvel_id"><%= comic.marvel_id %></td>
 						<td class="titulo"><input name="titulo" type="text" value="<%= comic.titulo %>" disabled></td>
 						<td class="creador"><input name="creador" type="text" value="<%= comic.creador || 's/d' %>" disabled></td>
 						<td class="paginas"><input name="paginas" type="text" value="<%- comic.paginas || 's/d' %>" disabled></td>
-						<td class="eliminar"><i class="fa-solid fa-circle-xmark"></i></td>
+						<td class="editar"><i class="fa-solid fa-pen"></i></td>
 					</tr>
 					<% } %>
 				</tbody>

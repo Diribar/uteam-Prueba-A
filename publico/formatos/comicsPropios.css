@@ -1,7 +1,7 @@
 table {
-	.editar {text-align: right;}
+	.eliminar {text-align: right;}
 	.titulo, .creador {text-align: left;}
-	.paginas input, .eliminar {text-align: center;}
+	.paginas input, .editar {text-align: center;}
 	input:disabled {border-color: transparent;}
 	.titulo input {min-width: 300px;}
 }

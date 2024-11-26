@@ -1,7 +1,12 @@
 table {
-	.eliminar {text-align: right;}
-	.titulo, .creador {text-align: left;}
-	.paginas input, .editar {text-align: center;}
+	th, td {
+		&.eliminar, &.marvel_id {text-align: right;}
+		&.titulo, &.creador {text-align: left;}
+		&.editar, &.paginas {text-align: center;}
+	}
+	th.titulo, th.creador {padding-left: 5px;}
+	.paginas input {text-align: center; width: 60px;}
 	input:disabled {border-color: transparent;}
-	.titulo input {min-width: 300px;}
+	p {visibility: hidden; height: 0; margin-block: 0; padding-inline: 3px;}
+	input {width: 100%;}
 }

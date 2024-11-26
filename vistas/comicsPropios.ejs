@@ -38,9 +38,18 @@
 					<tr>
 						<td class="eliminar"><i class="fa-solid fa-circle-xmark"></i></td>
 						<td class="marvel_id"><%= comic.marvel_id %></td>
-						<td class="titulo"><input name="titulo" type="text" value="<%= comic.titulo %>" disabled></td>
-						<td class="creador"><input name="creador" type="text" value="<%= comic.creador || 's/d' %>" disabled></td>
-						<td class="paginas"><input name="paginas" type="text" value="<%- comic.paginas || 's/d' %>" disabled></td>
+						<td class="titulo">
+							<p><%= comic.titulo %></p>
+							<input name="titulo" type="text" value="<%= comic.titulo %>" disabled>
+						</td>
+						<td class="creador">
+							<p><%= comic.creador || 's/d' %></p>
+							<input name="creador" type="text" value="<%= comic.creador || 's/d' %>" disabled>
+						</td>
+						<td class="paginas">
+							<p><p><%= comic.paginas || 's/d' %></p></p>
+							<input name="paginas" type="text" value="<%- comic.paginas || 's/d' %>" disabled>
+						</td>
 						<td class="editar"><i class="fa-solid fa-pen"></i></td>
 					</tr>
 					<% } %>

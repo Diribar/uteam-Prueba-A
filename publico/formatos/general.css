@@ -4,7 +4,10 @@ html {
 	line-height: 1;
 }
 body {background-color: lightgoldenrodyellow; padding-block: 30px ;}
-body * {font-family: 'Calibri', 'Trebuchet MS', 'sans-serif'; background-color: transparent; color: inherit;}
+body * {
+	font-family: 'Calibri', 'Trebuchet MS', 'sans-serif'; font-size: inherit;
+	background-color: transparent; color: inherit;
+}
 h1 {font-size: 1.5rem; color: darkblue;}
 h2 {font-size: 1.3rem; color: brown;}
 

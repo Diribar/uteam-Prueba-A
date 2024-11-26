@@ -12,7 +12,7 @@ router.get("/api/eliminar", contrAPI.eliminar);
 
 // Rutas - Vista
 router.get("/", contrVista.inicio);
-router.get("/listado-de-comics", contrVista.listadoComics);
+router.get("/comics-propios", contrVista.comicsPropios);
 router.get("/alta-de-comics", contrVista.altaComics);
 
 // Fin

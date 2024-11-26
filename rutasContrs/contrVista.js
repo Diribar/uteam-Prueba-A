@@ -5,9 +5,9 @@ const fsSync = require("node:fs");
 const fsAsync = require("node:fs/promises");
 
 module.exports = {
-	inicio: (req, res) => res.redirect("/listado-de-comics"),
+	inicio: (req, res) => res.redirect("/comics-propios"),
 
-	listadoComics: (req, res) => {
+	comicsPropios: (req, res) => {
 		// Obtiene la base de datos
 		const rutaNombre = path.join(__dirname, "../auxiliar/comics.json");
 		let baseDatos = JSON.parse(fsSync.readFileSync(rutaNombre, {encoding: "utf8"}));

@@ -59,7 +59,7 @@ window.addEventListener("load", () => {
 			fetch("/api/editar" + datos);
 		});
 	});
-	// Activa/ inactiva el botón confirmar
+	// Activa / inactiva el botón confirmar
 	DOM.inputs.forEach((input, i) => {
 		input.addEventListener("input", () => {
 			// Averigua la fila

@@ -13,7 +13,7 @@ module.exports = {
 		let baseDatos = JSON.parse(fsSync.readFileSync(rutaNombre, {encoding: "utf8"}));
 
 		// Fin
-		return res.render("listado", {baseDatos});
+		return res.render("comicsPropios", {baseDatos});
 	},
 
 	altaComics: async (req, res) => {
@@ -38,12 +38,12 @@ module.exports = {
 
 		// Obtiene los lotes vecinos
 		const lotes = {
-			anterior: lote - 20 >= 0 ? lote - 20 : 0,
+			anterior: Math.max(lote - 20, 0),
 			posterior: lote + 20,
 		};
 
 		// Fin
 		// return res.send(comics);
-		return res.render("altas", {comics, url, lotes, lote, marvelIds});
+		return res.render("altaComics", {comics, url, lotes, lote, marvelIds});
 	},
 };

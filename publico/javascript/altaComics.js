@@ -24,7 +24,7 @@ window.addEventListener("load", () => {
 				else continue;
 
 				// Agrega un valor
-				datos += input.id + "=" + input.innerHTML;
+				datos += input.id + "=" + encodeURIComponent(input.innerHTML);
 			}
 
 			// Envía los datos

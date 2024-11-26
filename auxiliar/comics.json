@@ -1,1 +1,26 @@
-[{"marvel_id":"384","titulo":"Gun Theory (2003) "},{"marvel_id":"1886","titulo":"Official Handbook of the Marvel Universe (2004) ","creador":"ss","paginas":"ee"},{"marvel_id":"1689","titulo":"Official Handbook of the Marvel Universe (2004) "},{"marvel_id":"1749","titulo":"Official Handbook of the Marvel Universe (2004) "},{"marvel_id":"1590","titulo":"Official Handbook of the Marvel Universe (2004) #9 (THE WOMEN OF MARVEL)","creador":"Ronald Byrd"},{"marvel_id":"15094","titulo":"Silver Surfer (1987)"}]
+[
+	{"marvel_id": "82967", "titulo": "Marvel Previews (2017)", "creador": "Jim Nausedas", "paginas": "112"},
+	{"marvel_id": "82965", "titulo": "Marvel Previews (2017)", "paginas": "152"},
+	{"marvel_id": "82970", "titulo": "Marvel Previews (2017)", "creador": "Jim Nausedas", "paginas": "112"},
+	{
+		"marvel_id": "1749",
+		"titulo": "Official Handbook of the Marvel Universe (2004) #11 (X-MEN - AGE OF APOCALYPSE)",
+		"creador": "Mark Brooks"
+	},
+	{
+		"marvel_id": "1886",
+		"titulo": "Official Handbook of the Marvel Universe (2004) #12 (SPIDER-MAN)",
+		"creador": "Heather Buchanan"
+	},
+	{
+		"marvel_id": "2088",
+		"titulo": "Official Handbook of the Marvel Universe (2004) #14 (FANTASTIC FOUR)",
+		"creador": "Ronald Byrd"
+	},
+	{
+		"marvel_id": "1590",
+		"titulo": "Official Handbook of the Marvel Universe (2004) #9 (THE WOMEN OF MARVEL)",
+		"creador": "Ronald Byrd"
+	},
+	{"marvel_id": "15094", "titulo": "Silver Surfer (1987)"}
+]

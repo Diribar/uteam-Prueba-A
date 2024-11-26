@@ -2,7 +2,8 @@ PROYECTO A
 
 1. La prueba que nos pidieron consta de dos partes:
 	- La parte visual en React. Como sólo tengo conceptos básicos en ese entorno de trabajo, opté por desarrollarlo en una tecnología alternativa que conozco mejor, HTML y CSS. Por supuesto, estoy abierto al aprendizaje de React, y me gustaría hacerlo también.
-	- La programación vía API. Eso está realizado en su totalidad. El código de programación es Node.js más JavaScript.
+	- La programación vía API. Eso está realizado en su totalidad.
+	- El código de programación es Node.js más JavaScript.
 
 2. Para ejecutar esta aplicación, se debe:
 	- Tener instalado Node.js
@@ -21,3 +22,4 @@ PROYECTO A
 
 5. Particularidades:
 	- Sólo se guardan datos relevantes en el archivo json. Los campos en los que las API no tienen un valor, no se guardan y la vista los asume como 's/d' (sin datos).
+	- Los resultados CRUD se ven impactados en el archivo \auxiliar\comics.json
